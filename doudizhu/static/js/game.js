@@ -69,11 +69,11 @@ PG.Game.prototype = {
                 break;
             case PG.Protocol.RSP_NEW_TABLE:
                 this.tableId = packet[1];
-                this.titleBar.text = '房间:' + this.tableId;
+                this.titleBar.text = 'room:' + this.tableId;
                 break;
 	        case PG.Protocol.RSP_JOIN_TABLE:
                 this.tableId = packet[1];
-                this.titleBar.text = '房间:' + this.tableId;
+                this.titleBar.text = 'room:' + this.tableId;
                 var playerIds = packet[2];
                 for (var i = 0; i < playerIds.length; i++) {
                     if (playerIds[i][0] == this.players[0].uid) {
@@ -101,7 +101,7 @@ PG.Game.prototype = {
                 this.whoseTurn = this.uidToSeat(playerId);
                 //this.debug_log(playerId);
 
-                var hanzi = ['不叫', "一分", "两分", "三分"];
+                var hanzi = ['not called', "one cent", "two points", "three points"];
                 this.players[this.whoseTurn].say(hanzi[score]);
                 if (!callend) {
                     this.whoseTurn = (this.whoseTurn + 1) % 3;
@@ -136,7 +136,7 @@ PG.Game.prototype = {
                 this.whoseTurn = this.uidToSeat(winner);
 
                 function gameOver() {
-                    alert(this.players[this.whoseTurn].isLandlord ? "地主赢" : "农民赢");
+                    alert(this.players[this.whoseTurn].isLandlord ? "LANDLORD WINS" : "FARMERS WIN");
                     PG.Socket.send([PG.Protocol.REQ_RESTART]);
                     this.cleanWorld();
                 }
@@ -287,7 +287,7 @@ PG.Game.prototype = {
         var turnPlayer = this.players[this.whoseTurn];
         var pokers = packet[2];
         if (pokers.length == 0) {
-            this.players[this.whoseTurn].say("不出");
+            this.players[this.whoseTurn].say("OUT");
         } else {
             var pokersPic = {};
             pokers.sort(PG.Poker.comparePoker);
@@ -392,12 +392,12 @@ PG.Game.prototype = {
             table.tableId = tables[i][0];
             group.add(table);
 
-            var text = this.game.make.text(sx, sy, '房间:' + tables[i][0] + '人数:' + tables[i][1], style);
+            var text = this.game.make.text(sx, sy, 'room:' + tables[i][0] + 'number of people:' + tables[i][1], style);
             text.anchor.set(0.5, 0);
             group.add(text);
 
             if (i == tables.length - 1) {
-                text.text = '新建房间';
+                text.text = 'New Room';
             }
         }
     },
@@ -408,7 +408,7 @@ PG.Game.prototype = {
 
     createTitleBar: function() {
         var style = {font: "22px Arial", fill: "#fff", align: "center"};
-        this.titleBar = this.game.add.text(this.game.world.centerX, 0, '房间:', style);
+        this.titleBar = this.game.add.text(this.game.world.centerX, 0, 'room:', style);
     },
 
     onJoin: function (btn) {

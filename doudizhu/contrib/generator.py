@@ -1,18 +1,18 @@
 # encoding=utf8
 
-# 1) 单张：从3(最小)到大王(最大)；
-# 2) 一对：两张大小相同的牌，从3(最小)到2(最大)；
-# 3) 三张：三张大小相同的牌；
-# 4) 三张带一张：三张并带上任意一张牌，例如6-6-6-8，根据三张的大小来比较，例如9-9-9-3盖过8-8-8-A；
-# 5) 三张带一对：三张并带上一对，类似扑克中的副路(Full House)，根据三张的大小来比较，例如Q-Q-Q-6-6盖过10-10-10-K-K；
-# 6) 顺子：至少5张连续大小(从3到A，2和王不能用)的牌，例如8-9-10-J-Q；
-# 7) 连对：至少3个连续大小(从3到A，2和王不能用)的对子，例如10-10-J-J-Q-Q-K-K；
-# 8) 三张的顺子：至少2个连续大小(从3到A)的三张，例如4-4-4-5-5-5；
-# 9) 三张带一张的顺子：每个三张都带上额外的一个单张，例如7-7-7-8-8-8-3-6，尽管三张2不能用，但能够带上单张2和王；
-# 10) 三张带一对的顺子：每个三张都带上额外的一对，例如8-8-8-9-9-9-4-4-J-J，尽管三张2不能用，但能够带上一对2，三张带上的单张和一对不能是混合的，例如3-3-3-4-4-4-6-7-7就是不合法的；
-# 11) 炸弹：四张大小相同的牌，炸弹能盖过除火箭外的其他牌型，大的炸弹能盖过小的炸弹；
-# 12) 火箭：一对王，这是最大的组合，能够盖过包括炸弹在内的任何牌型；
-# 13) 四张套路(四带二)：有两种牌型，一个四张带上两个单张，例如6-6-6-6-8-9，或一个四张带上两对，例如J-J-J-J-9-9-Q-Q，四张带二张和四张带二对属于不同的牌型，不能彼此盖过;
+# 1) Leaflet: from 3 (minimum) to King (maximum);
+# 2) Pair: two cards of the same rank, from 3 (smallest) to 2 (largest);
+# 3) Three of a Kind: Three cards of the same size;
+# 4) Three with one: three and any card, such as 6-6-6-8, compared according to the size of the three, for example, 9-9-9-3 covers 8-8-8-A ;
+# 5) Three cards with a pair: three cards and a pair, similar to the side road (Full House) in poker, compared according to the size of the three cards, for example, Q-Q-Q-6-6 overshadows 10-10-10-K-K;
+# 6) Straight: at least 5 cards of consecutive sizes (from 3 to A, 2 and King cannot be used), such as 8-9-10-J-Q;
+# 7) Connected pairs: at least 3 pairs of consecutive sizes (from 3 to A, 2 and king cannot be used), such as 10-10-J-J-Q-Q-K-K;
+# 8) Three-of-a-kind straight: at least two consecutive three-of-a-kind (from 3 to A), e.g. 4-4-4-5-5-5;
+# 9) Three-of-a-kind straight: Each three carries an extra single, such as 7-7-7-8-8-8-3-6, although three 2s cannot be used, but can be brought leaflet 2 and king;
+# 10) Three-of-a-kind straight: Each triple brings an extra pair, such as 8-8-8-9-9-9-4-4-J-J, although three of 2 cannot be used, but can bring On a pair of 2, singles and a pair on three cards cannot be mixed, for example, 3-3-3-4-4-4-6-7-7 is illegal;
+# 11) Bomb: four cards of the same size, the bomb can cover other card types except the rocket, and the big bomb can cover the small bomb;
+# 12) Rocket: A pair of kings, this is the biggest combination, which can cover any card type including bombs;
+# 13) Four-card routine (four with two): There are two types of cards, a four with two singles, such as 6-6-6-6-8-9, or a four with two pairs, such as J-J-J-J- 9-9-Q-Q, four cards with two cards and four cards with two pairs belong to different card types and cannot overwrite each other;
 
 # ♠ ♡ ♢ ♣
 CARDS = '34567890JQKA2'

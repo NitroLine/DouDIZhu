@@ -3,15 +3,15 @@ from sentry_sdk.integrations.tornado import TornadoIntegration
 
 from .base import *
 
-DEBUG = False
+DEBUG = True
 
 SECRET_KEY = 'fiDSpuZ7QFe8fm0XP9Jb7ZIPNsOegkHYtgKSd4I83Hs='
 
 DATABASE = {
-    'host': '127.0.0.1',
+    'host': 'db',
     'database': 'ddz',
     'user': 'root',
-    'password': '123456',
+    'password': 'your_database_password',
 }
 
 sentry_sdk.init(
@@ -22,7 +22,7 @@ sentry_sdk.init(
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'root': {
         'level': 'INFO',
         'handlers': ['file', 'console'],

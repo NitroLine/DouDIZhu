@@ -4,12 +4,12 @@ import json
 
 '''
 # A 2 3 4 5 6 7 8 9 0 J Q K W w
-# 记分
-# 地主先出完所有的牌就赢了，如果没有出过炸弹或火箭，那么每个农民要把定约的分数(1分、2分或3分)付给地主。
-# 两个农民中有一个先出完所有的牌，地主就输了，那么地主要把定约的分数付给每个农民。
-# 每当任何一个玩家出了炸弹或火箭，那么分数就要翻一番。
-# 例如某局牌出了2个炸弹和1个火箭，叫3分的地主如果先出完，他就向每个农民赢得24分【总共赢得48分】，
-# 如果农民先出完，地主就向每个农民输掉24分【总共输掉48分】。
+# KeepScore
+# The landlord who runs out of cards first wins，If no bombs or rockets were delivered, each peasant pays the landlord the fraction of the bid (1, 2, or 3)。
+# If one of the two opponents runs out of cards first, the landlord loses, and the landlord pays each opponent the amount of the bid.
+# Every time any player plays a bomb or rocket, the score is doubled.
+# For example, if there are 2 bombs and 1 rocket in a certain hand, if the landlord who bids 3 points goes out first, he will win 24 points from each peasant [48 points in total],
+# If the peasants run out first, the landlord loses 24 points to each peasant [total loss of 48 points].
 '''
 
 CARD_TYPES = [

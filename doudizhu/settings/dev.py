@@ -3,10 +3,10 @@ from .base import *
 SECRET_KEY = 'fiDSpuZ7QFe8fm0XP9Jb7ZIPNsOegkHYtgKSd4I83Hs='
 
 DATABASE = {
-    'host': 'localhost',
+    'host': 'db',
     'database': 'ddz',
     'user': 'root',
-    'password': '123456',
+    'password': 'your_database_password',
 }
 
 LOGGING = {

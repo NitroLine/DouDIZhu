@@ -110,7 +110,7 @@ PG.MainMenu = {
         this.game.world.add(setting);
 
         var style = {font: "28px Arial", fill: "#fff", align: "right"};
-        var text = this.game.add.text(this.game.world.width - 4, 4, "欢迎回来 " + PG.playerInfo.username, style);
+        var text = this.game.add.text(this.game.world.width - 4, 4, "WELCOME BACK " + PG.playerInfo.username, style);
         text.addColor('#cc00cc', 4);
         text.anchor.set(1, 0);
     },
@@ -142,17 +142,17 @@ PG.Login = {
         var style = {
             font: '24px Arial', fill: '#000', width: 300, padding: 12,
             borderWidth: 1, borderColor: '#c8c8c8', borderRadius: 2,
-            textAlign: 'center', placeHolder: '姓名'
+            textAlign: 'center', placeHolder: 'FULL NAME'
             // type: PhaserInput.InputType.password
         };
         this.game.add.plugin(PhaserInput.Plugin);
 
         this.username = this.game.add.inputField((this.game.world.width - 300) / 2, this.game.world.centerY - 160, style);
 
-        style.placeHolder = '密码';
+        style.placeHolder = 'Password';
         this.password = this.game.add.inputField((this.game.world.width - 300) / 2, this.game.world.centerY - 90, style);
 
-        style.placeHolder = '再次输入密码';
+        style.placeHolder = 'ENTER PASSWORD AGAIN';
         this.passwordAgain = this.game.add.inputField((this.game.world.width - 300) / 2, this.game.world.centerY - 15, style);
 
         var style = {font: "22px Arial", fill: "#f00", align: "center"};
@@ -166,21 +166,21 @@ PG.Login = {
     onLogin: function () {
         if (!this.username.value) {
             this.username.startFocus();
-            this.errorText.text = '请输入用户名';
+            this.errorText.text = 'PLEASE ENTER USER NAME';
             return;
         }
         if (!this.password.value) {
             this.password.startFocus();
-            this.errorText.text = '请输入密码';
+            this.errorText.text = 'please enter password';
             return;
         }
         if (!this.passwordAgain.value) {
             this.passwordAgain.startFocus();
-            this.errorText.text = '请再次输入密码';
+            this.errorText.text = 'please enter password again';
             return;
         }
         if (this.password.value != this.passwordAgain.value) {
-            this.errorText.text = "两次输入的密码不一致";
+            this.errorText.text = "the two entered passwords do not match";
             return;
         }
 

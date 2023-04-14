@@ -48,19 +48,19 @@ def generate_button(params):
 
 if __name__ == '__main__':
     db = (
-        ('quick', '挑战AI', (160, 60), 36),
-        ('start', '真人对抗', (160, 60), 36),
-        ('exit', '退出游戏', (160, 60), 36),
-        ('setting', '设置', (160, 60), 36),
-        ('register', '注册', (160, 60), 36),
+        ('quick', 'ChallengeAI', (160, 60), 36),
+        ('start', 'RealPersonConfrontation', (160, 60), 36),
+        ('exit', 'ExitTheGame', (160, 60), 36),
+        ('setting', 'setUp', (160, 60), 36),
+        ('register', 'register', (160, 60), 36),
 
-        ('score_0', '不叫', (128, 48), 28),
-        ('score_1', '一分', (128, 48), 28),
-        ('score_2', '两分', (128, 48), 28),
-        ('score_3', '三分', (128, 48), 28),
-        ('pass', '不出', (128, 48), 28),
-        ('hint', '提示', (128, 48), 28),
-        ('shot', '出牌', (128, 48), 28),
+        ('score_0', 'NotCalled', (128, 48), 28),
+        ('score_1', 'OneCent', (128, 48), 28),
+        ('score_2', 'DICHOTOMY', (128, 48), 28),
+        ('score_3', 'ThreePoints', (128, 48), 28),
+        ('pass', 'OUT', (128, 48), 28),
+        ('hint', 'prompt', (128, 48), 28),
+        ('shot', 'playingCards', (128, 48), 28),
     )
     generate_button(db)
     print('generate done')

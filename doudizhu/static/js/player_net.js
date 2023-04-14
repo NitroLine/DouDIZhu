@@ -110,10 +110,10 @@ PG.NetPlayer.prototype.initUI = function (sx, sy) {
 
     var style = {font: "20px Arial", fill: "#c8c8c8", align: "center"};
     if (this.seat == 1) {
-        this.uiName = this.game.add.text(sx - 40, sy - 80, '等待玩家加入', style);
+        this.uiName = this.game.add.text(sx - 40, sy - 80, 'waiting for players to join', style);
         this.uiName.anchor.set(1, 0);
     } else {
-        this.uiName = this.game.add.text(sx + 40, sy - 80, '等待玩家加入', style);
+        this.uiName = this.game.add.text(sx + 40, sy - 80, 'waiting for players to join', style);
         this.uiName.anchor.set(0, 0);
     }
 };
@@ -122,7 +122,7 @@ PG.NetPlayer.prototype.initUI = function (sx, sy) {
 PG.NetPlayer.prototype.updateInfo = function (uid, name) {
     PG.Player.prototype.updateInfo.call(this, uid, name);
     if (uid == -1) {
-        this.uiName.text = '等待玩家加入';
+        this.uiName.text = 'waiting for players to join';
     } else {
         this.uiName.text = name;
     }

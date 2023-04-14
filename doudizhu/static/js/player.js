@@ -137,7 +137,7 @@ PG.Player.prototype.onHint = function (btn) {
     var bigger = this.hint(this.hintPoker);
     if (bigger.length == 0) {
         if (this.hintPoker == this.lastTurnPoker) {
-            this.say("没有能大过的牌");
+            this.say("no big card");
         } else {
             this.pokerUnSelected(this.hintPoker);
         }
@@ -180,7 +180,7 @@ PG.Player.prototype.canPlay = function (lastTurnPoker, shotPoker) {
     var cardsA = PG.Poker.toCards(shotPoker);
     var valueA = PG.Rule.cardsValue(cardsA);
     if (!valueA[0]){
-        return '出牌不合法';
+        return 'illegal play';
     }
     var cardsB = PG.Poker.toCards(lastTurnPoker);
     if (cardsB.length == 0) {
@@ -188,13 +188,13 @@ PG.Player.prototype.canPlay = function (lastTurnPoker, shotPoker) {
     }
     var valueB = PG.Rule.cardsValue(cardsB);
     if (valueA[0] != valueB[0] && valueA[1] < 1000) {
-        return '出牌类型跟上家不一致';
+        return 'The type of cards played is inconsistent with the previous one';
     }
 
     if (valueA[1] > valueB[1]) {
         return '';
     }
-    return '出牌需要大于上家';
+    return 'the card needs to be greater than the previous one';
 };
 
 PG.Player.prototype.playPoker = function (lastTurnPoker) {

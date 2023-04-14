@@ -92,12 +92,12 @@ PG.NetPlayer.prototype.dealPokerAnim = function (p, i) {
         this.game.add.tween(p).to({
             x: this.seat == 1 ? width - PG.PW/2 : PG.PW/2,
             y: this.seat == 1 ? this.uiHead.y + PG.PH/2 + 10 : this.uiHead.y + PG.PH/2 + 10
-        }, 500, Phaser.Easing.Default, true, 25 + 50 * i);
+        }, 200, Phaser.Easing.Default, true, 25 + 50 * i);
     } else {
         this.game.add.tween(p).to({
             x: this.seat == 1 ? (width - PG.PW/2) - (i * PG.PW * 0.44) : PG.PW/2 + i * PG.PW * 0.44,
             y: this.seat == 1 ? this.uiHead.y + PG.PH/2 + 10 : this.uiHead.y + PG.PH * 1.5 + 20
-        }, 500, Phaser.Easing.Default, true, 50 * i);
+        }, 200, Phaser.Easing.Default, true, 50 * i);
     }
 };
 

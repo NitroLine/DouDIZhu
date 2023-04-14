@@ -241,7 +241,7 @@ PG.Player.prototype.dealPokerAnim = function (p, i) {
     this.game.add.tween(p).to({
         x: this.game.world.width / 2 + PG.PW * 0.44 * (i - 8.5),
         y: this.game.world.height - PG.PH / 2
-    }, 500, Phaser.Easing.Default, true, 50 * i);
+    }, 100, Phaser.Easing.Default, true, 50 * i);
 };
 
 PG.Player.prototype.arrangePoker = function () {
@@ -251,7 +251,7 @@ PG.Player.prototype.arrangePoker = function () {
         var pid = this.pokerInHand[i];
         var p = this.findAPoker(pid);
         p.bringToTop();
-        this.game.add.tween(p).to({x: this.game.world.width / 2 + (i - count / 2) * gap}, 600, Phaser.Easing.Default, true);
+        this.game.add.tween(p).to({x: this.game.world.width / 2 + (i - count / 2) * gap}, 100, Phaser.Easing.Default, true);
     }
 };
 

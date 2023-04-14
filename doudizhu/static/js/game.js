@@ -30,8 +30,9 @@ PG.Game.prototype = {
     },
 
 	create: function () {
-        this.stage.backgroundColor = '#182d3b';
-
+        this.stage.backgroundColor = '#1e4861';
+        var bg = this.game.add.sprite(this.game.width / 2, 0, 'bg');
+        bg.anchor.set(0.5, 0);
         this.players.push(PG.createPlay(0, this));
         this.players.push(PG.createPlay(1, this));
         this.players.push(PG.createPlay(2, this));
@@ -240,7 +241,7 @@ PG.Game.prototype = {
             var p = this.tablePoker[i + 3];
             p.id = pokerId;
             p.frame = pokerId;
-            this.game.add.tween(p).to({ x: this.game.world.width/2 + (i - 1) * 60}, 600, Phaser.Easing.Default, true);
+            this.game.add.tween(p).to({ x: this.game.world.width/2 + (i - 1) * 60}, 200, Phaser.Easing.Default, true);
         }
         this.game.time.events.add(1500, this.dealLastThreePoker, this);
     },
@@ -259,9 +260,9 @@ PG.Game.prototype = {
             turnPlayer.arrangePoker();
             for (var i = 0; i < 3; i++) {
                 var p = this.tablePoker[i + 3];
-                var tween = this.game.add.tween(p).to({y: this.game.world.height - PG.PH * 0.8 }, 400, Phaser.Easing.Default, true);
+                var tween = this.game.add.tween(p).to({y: this.game.world.height - PG.PH * 0.8 }, 200, Phaser.Easing.Default, true);
                 function adjust(p) {
-                    this.game.add.tween(p).to({y: this.game.world.height - PG.PH /2}, 400, Phaser.Easing.Default, true, 400);
+                    this.game.add.tween(p).to({y: this.game.world.height - PG.PH /2}, 200, Phaser.Easing.Default, true, 400);
                 };
                 tween.onComplete.add(adjust, this, p);
             }
@@ -298,7 +299,7 @@ PG.Game.prototype = {
                 p.id = pokers[i];
                 p.frame = pokers[i];
                 p.bringToTop();
-                this.game.add.tween(p).to({ x: this.game.world.width/2 + (i - count/2) * gap, y: this.game.world.height * 0.4}, 500, Phaser.Easing.Default, true);
+                this.game.add.tween(p).to({ x: this.game.world.width/2 + (i - count/2) * gap, y: this.game.world.height * 0.4}, 200, Phaser.Easing.Default, true);
 
                 turnPlayer.removeAPoker(pokers[i]);
                 pokersPic[p.id] = p;
